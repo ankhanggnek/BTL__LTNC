@@ -33,7 +33,6 @@ public class FirebaseConfig {
         ref.child(user.getId()).setValueAsync(user);
     }
 }
-
 class User {
     private String id;
     private String name;
