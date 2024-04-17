@@ -20,7 +20,7 @@ public class RestDemoController {
     FirebaseService fireBaseService;
     @GetMapping("/getUserDetails")
     public Person getExample(@RequestHeader() String name) throws InterruptedException, ExecutionException {
-        return new Person(name, "30", "Dallas");
+        return fireBaseService.getUserDetails(name);
     }
 
     @PostMapping("/createUser")
