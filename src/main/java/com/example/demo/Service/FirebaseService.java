@@ -38,4 +38,23 @@ public class FirebaseService {
         ApiFuture<WriteResult> writeResult = dbFirestore.collection("users").document(name).delete();
         return "Document with ID " + name + " has been deleted";
     }
+
+
+    public String authenticateUser(Person person) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        DocumentReference documentReference = dbFirestore.collection("users").document(person.getUsername());
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        DocumentSnapshot document = future.get();
+
+        if(document.exists()) {
+            Person person = document.toObject(Person.class);
+            if (person.getPassword().equals(person.getPassword())) {
+                return "Token";
+            } else {
+                return "Invalid password";
+            }
+        } else {
+            return "User does not exist";
+        }
+    }
 }
