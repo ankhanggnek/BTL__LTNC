@@ -28,6 +28,11 @@ public class RestDemoController {
         return fireBaseService.saveUserDetails(person);
     }
 
+    @PostMapping("/login/auth")
+    public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
+        return fireBaseService.authenticateUser(loginRequest);
+    }
+
     @PutMapping("/updateUser")
     public String putExample(@RequestBody Person person) throws InterruptedException, ExecutionException {
         return fireBaseService.updateUserDetails(person);
