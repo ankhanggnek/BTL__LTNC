@@ -1,6 +1,6 @@
 package com.example.demo.Service;
 import java.util.concurrent.ExecutionException;
-import com.example.demo.objects.Person;
+import com.example.demo.object.Person;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -47,8 +47,8 @@ public class FirebaseService {
         DocumentSnapshot document = future.get();
 
         if(document.exists()) {
-            Person person = document.toObject(Person.class);
-            if (person.getPassword().equals(person.getPassword())) {
+            Person user = document.toObject(Person.class);
+            if (user.getPassword().equals(person.getPassword())) {
                 return "Token";
             } else {
                 return "Invalid password";

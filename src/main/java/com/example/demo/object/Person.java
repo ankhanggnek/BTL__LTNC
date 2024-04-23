@@ -1,4 +1,4 @@
-package com.example.demo.objects;
+package com.example.demo.object;
 
 import org.springframework.stereotype.Component;
 
@@ -71,7 +71,7 @@ public class Person {
     public String getSex() {
         return sex;
     }
-    public String setSex(String sex){
+    public void setSex(String sex){
         this.sex = sex;
     }
     public String getCccd() {
