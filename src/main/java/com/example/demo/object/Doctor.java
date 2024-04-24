@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Doctor extends Person {
 
+    private String id;
     private String department;
     private String qualifications;
     private boolean available;
@@ -14,14 +15,23 @@ public class Doctor extends Person {
         super();
     }
 
-    public Doctor(String name, String age, String location, String email, String phoneNumber, String sex, String cccd, String department, String qualifications, boolean available, String time_off) {
+    public Doctor(String name, String age, String location, String email, String phoneNumber, String sex, String cccd, String id, String department, String qualifications, boolean available, String time_off) {
         super(name, age, location, email, phoneNumber, sex, cccd);
+        this.id = id;
         this.department = department;
         this.qualifications = qualifications;
         this.available = available;
         this.time_off = time_off;
     }
 
+    public String getId(){
+        return id;
+    }
+
+    public String setId(){
+        this.id = id;
+    }    
+    
     public String getDepartment() {
         return department;
     }
