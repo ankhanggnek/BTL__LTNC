@@ -24,11 +24,11 @@ public class Doctor extends Person {
         this.time_off = time_off;
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
-    public String setId(){
+    public void setId(String id) {
         this.id = id;
     }    
     
