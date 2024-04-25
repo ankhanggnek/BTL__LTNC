@@ -7,10 +7,10 @@ import java.util.Date;
 @Getter
 @Setter
 public class RecordsPatient {
-    public Date date;
-    public String bacSiChiDinh;
-    public String bacSiThucHien;
-    public String phuongPhap;
-    public String state;
-    public String result;
+    private Date date;
+    private Doctor bacSiChiDinh;
+    private Doctor bacSiThucHien;
+    private String phuongPhap;
+    private String state;
+    private String result;
 }

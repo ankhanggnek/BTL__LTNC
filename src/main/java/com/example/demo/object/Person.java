@@ -25,6 +25,17 @@ public class Person {
         this.location = location;
     }
 
+
+    public Person(String name, String age, String location, String email, String phoneNumber, String sex, String cccd) {
+        this.name = name;
+        this.age = age;
+        this.location = location;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.sex = sex;
+        this.cccd = cccd;
+    }
+
     public String getName() {
         return name;
     }
