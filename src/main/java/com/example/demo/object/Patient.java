@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutionException;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Patient extends Person {
-    private int Serial;
+    private int serial;
     private String id;
     private String bloodType;
     private List<RecordsPatient> records;
@@ -27,7 +27,7 @@ public class Patient extends Person {
     private String date;
     private String roomCode;
 
-    public void setid() throws InterruptedException, ExecutionException {
+    public void setid_serial() throws InterruptedException, ExecutionException {
         Firestore dbFireStore = FirestoreClient.getFirestore();
         CollectionReference collection = dbFireStore.collection("Patient");
         int serial = 1;
@@ -42,5 +42,6 @@ public class Patient extends Person {
             e.printStackTrace();
         }
         this.id = "BNNT" + serial;
+        this.serial = serial;
     }
 }
